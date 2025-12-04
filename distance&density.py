@@ -8,7 +8,7 @@ from sklearn.neighbors import NearestNeighbors
 # LOAD THE CSV WITH ANOMALY LABELS
 # ============================================================
 
-df = pd.read_csv("/Users/lowbo_9u0/Downloads/vesseldata/ais-2025-06-01-with-anomalies.csv", low_memory=False)
+df = pd.read_csv("ais-2025-06-01-with-anomalies.csv", low_memory=False)
 
 # Ensure the required columns exist
 required_cols = ["latitude", "longitude", "anomaly"]
@@ -83,4 +83,5 @@ plt.xlabel("Distance to Nearest Neighbor (km)")
 plt.ylabel("Density")
 plt.xlim(0, df["nn_distance_km"].quantile(0.99))  # trim long tail for visibility
 plt.show()
+
 
